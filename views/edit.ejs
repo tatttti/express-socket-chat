@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактировать рецепт</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+<header>
+    <h1>Редактировать рецепт</h1>
+    <h2>Внесите изменения и сохраните</h2>
+</header>
+
+<div class="recipes-container">
+    <div class="recipe-card" style="padding: 35px;">
+        <form action="/items/<%= item.id %>?_method=PUT" method="POST">
+            <label class="form-label">Название</label>
+            <input name="name" value="<%= item.name %>" required class="form-input">
+
+            <label class="form-label">Описание</label>
+            <textarea name="desc" required class="form-textarea"><%= item.desc %></textarea>
+
+            <button class="btn" type="submit" style="margin-top: 20px;">Сохранить изменения</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

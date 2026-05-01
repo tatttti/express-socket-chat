@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить рецепт</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+<header>
+    <h1>Добавить рецепт</h1>
+    <h2>Создайте новое блюдо для нашей коллекции</h2>
+</header>
+
+<div class="recipes-container">
+    <div class="recipe-card" style="padding: 35px;">
+        <form action="/items" method="POST">
+            <label class="form-label">ID рецепта</label>
+            <input name="id" type="number" required class="form-input">
+
+            <label class="form-label">Название</label>
+            <input name="name" required class="form-input">
+
+            <label class="form-label">Описание</label>
+            <textarea name="desc" required class="form-textarea"></textarea>
+
+            <button class="btn" type="submit" style="margin-top: 20px;">Добавить рецепт</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

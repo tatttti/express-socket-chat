@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title><%= item.name %></title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<header>
+    <h1><%= item.name %></h1>
+    <h2 id="subtitle">Подробное описание блюда</h2>
+</header>
+
+<div class="recipes-container">
+
+    <div class="recipe-card" style="padding: 35px;">
+        <p style="font-size: 1.25rem; line-height: 1.7; margin-bottom: 25px;">
+            <%= item.desc %>
+        </p>
+        <a class="btn" href="/items-page" style="margin-top: 10px;">Назад к рецептам</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

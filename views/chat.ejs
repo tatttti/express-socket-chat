@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Чатики</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+<header class="chat-header">
+    <h1>Обменивайтесь рецептами</h1>
+    <h2>Чат по комнатам</h2>
+    <a href="/" class="btn-nav">Главная</a>
+</header>
+
+<div class="chat-page">
+    <div class="chat-wrapper">
+        <div class="rooms-panel">
+            <h3>Комнаты</h3>
+            <div id="roomList" class="room-list"></div>
+            <div class="create-room">
+                <input id="newRoom" placeholder="Новая комната" class="input">
+                <button id="createRoomBtn" class="btn">Создать</button>
+            </div>
+        </div>
+
+        <div class="chat-panel">
+            <h3 id="roomTitle">Выберите комнату</h3>
+            <div id="members" class="members"></div>
+            <div id="messages" class="messages"></div>
+            <div class="send-block">
+                <input id="msg" placeholder="Введите сообщение" class="input">
+                <button id="sendBtn" class="btn">Отправить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/client.js"></script>
+</body>
+</html>

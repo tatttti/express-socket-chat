@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Все рецепты</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Наши рецепты</h1>
+    <h2 id="subtitle">Коллекция блюд, созданных с любовью</h2>
+</header>
+
+<form method="GET" action="/items-page">
+    <input name="search" value="<%= search %>">
+    <select name="sort">
+        <option value="">Без сортировки</option>
+        <option value="name" <%= sort === "name" ? "selected" : "" %>>По названию</option>
+    </select>
+    <button type="submit">Применить</button>
+</form>
+
+<div class="recipes-container">
+    <% items.forEach(item => { %>
+        <div class="recipe-card">
+            <h3><%= item.name %></h3>
+            <p><%= item.desc %></p>
+
+            <div class="card-buttons">
+                <a class="btn small-btn" href="/items-page/<%= item.id %>">Открыть</a>
+                <a class="btn small-btn" href="/edit/<%= item.id %>">Редактировать</a>
+                <a class="btn small-btn" href="/delete/<%= item.id %>">Удалить</a>
+            </div>
+        </div>
+    <% }) %>
+</div>
+
+<div class="center" style="margin: 30px 0;">
+    <%if (totalPages > 1) { %>
+        <% for (let i = 1; i <= totalPages; i++) { %>
+            <a class="btn small-btn" href="/items-page?page=<%= i%>&sort=<%= sort %>&search=<%= search %>" style="<%= i === currentPage ? 'background:#444;' : '' %>">
+                <%= i %>
+            </a>
+        <% } %>
+    <% } %>
+</div>
+<div class="center" style="margin-bottom: 50px;">
+    <a class="btn" href="/add">Добавить рецепт</a>
+</div>
+</body>
+</html>
+
+
